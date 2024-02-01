@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import './Nav.css'
 import images from '../../images'
 
 const Nav = () => {
-    const [netflixImage,setNetflixImages]= useState(images)
+  const wholeImages = useRef(images)
+  const netflixImage = wholeImages.current
     const [show,setShow] = useState(false)
 
     const navBarScroll = ()=>{
@@ -13,7 +14,7 @@ const Nav = () => {
     useEffect(()=>{
         window.addEventListener("scroll",navBarScroll)
         return ()=> window.removeEventListener("scroll",navBarScroll)
-    },[])
+    }, [])
 
     console.log(netflixImage)
   return (

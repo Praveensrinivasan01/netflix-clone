@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { useRef } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HomeScreen from "./Pages/Home/HomeScreen";
 import users from "./user.json"
+import "./App.css"
 
 const App = () => {
-  const [userDetails,setUserDetails]=useState(users)
-  console.log("USER DETAILS",userDetails)
+  const jsonUser = useRef(users)
+  const userDetails = jsonUser.current
   const user = {
     name:userDetails['firstaname'] + " " + userDetails['lastname'],
     email:userDetails['email']
