@@ -12,7 +12,7 @@ const App = () => {
     email:userDetails['email']
   };
   return (
-    <div>
+    <div className="app">
       <Router>
         {!user ? (
           <div>Login Screen</div>

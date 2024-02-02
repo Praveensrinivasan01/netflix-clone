@@ -1,4 +1,4 @@
-import axios from "../utils/axios";
+import axios from "../../utils/axios";
 import "./Row.css"
 
 import React, { useEffect, useRef, useState } from 'react'

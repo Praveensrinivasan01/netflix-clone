@@ -8,7 +8,7 @@ const Nav = () => {
     const [show,setShow] = useState(false)
 
     const navBarScroll = ()=>{
-        window.scrollY < 100 ? setShow(true) : setShow(false)
+      window.scrollY > 100 ? setShow(true) : setShow(false)
     }
 
     useEffect(()=>{
