@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HomeScreen from "./Pages/Home/HomeScreen";
 import users from "./user.json"
 import "./App.css"
+import Profile from "./Pages/Profile/Profile";
 
 const App = () => {
   const jsonUser = useRef(users)
@@ -18,7 +19,7 @@ const App = () => {
           <div>Login Screen</div>
         ) : (
           <Routes>
-            {/* <Route path='/profile' element={} /> */}
+              <Route path='/profile' element={<Profile />} />
             <Route path="/" element={<HomeScreen/>} />
           </Routes>
         )}

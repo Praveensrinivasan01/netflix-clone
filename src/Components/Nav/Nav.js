@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import './Nav.css'
 import images from '../../images'
+import { Link } from 'react-router-dom'
 
 const Nav = () => {
   const wholeImages = useRef(images)
@@ -20,8 +21,8 @@ const Nav = () => {
   return (
     <div className={`nav ${show && "nav__black"}`}>
       <div className='nav__contents'>
-        <img src={netflixImage.logo} alt='' className='nav__logo' />
-        <img src={netflixImage.avatar} alt='' className='nav__avatar' />
+        <Link hrefLang={"/"}><img src={netflixImage.logo} alt='' className='nav__logo' /></Link>
+        <Link hrefLang={"/profile"}> <img src={netflixImage.avatar} alt='' className='nav__avatar' /></Link>
       </div>
     </div>
   )

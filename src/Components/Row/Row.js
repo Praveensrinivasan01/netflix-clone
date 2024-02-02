@@ -10,14 +10,12 @@ const Row = ({ title, fetchURL, isLarge = false }) => {
 
     useEffect(() => {
         fetchMovie()
-
-        console.log("BASE URL", movie)
     }, [fetchURL])
 
     const fetchMovie = async () => {
         const response = await axios.get(fetchURL);
-        if (response.data.results) {
-            setMovie(response.data.results)
+        if (response.data.results.length) {
+            setMovie(response.data.results.slice(0, 10))
         }
         return response
     }

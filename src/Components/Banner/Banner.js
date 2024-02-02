@@ -10,7 +10,6 @@ const Banner = () => {
     useEffect(() => {
         const banner = async () => {
             const response = await axios.get(requests.fetchNetflixOriginals);
-            console.log("REPONSE", response)
             if (response.data.results.length) {
                 let mathRandom = Math.floor(Math.random() * response.data.results.length - 2)
                 setMovie(response.data.results[mathRandom])
